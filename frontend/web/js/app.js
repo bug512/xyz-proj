@@ -46,6 +46,8 @@ app.config([
 	'$routeProvider', function($routeProvider) {
 		$routeProvider.when('/', {
 			templateUrl: 'partials/index.html', controller: 'indexCtrl'
+		}).when('/first', {
+			templateUrl: 'partials/first-page.html', controller: 'indexCtrl'
 		}).otherwise({
 			templateUrl: 'partials/404.html'
 		});
