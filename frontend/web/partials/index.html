@@ -1,0 +1,43 @@
+
+
+
+    <md-toolbar layout="row" class="md-primary md-default-theme md-whiteframe-z2 snow-toolbar">
+        <md-menu>
+            <md-button aria-label="Open demo menu" class="md-icon-button" ng-click="$mdOpenMenu()">
+                <md-icon md-menu-origin md-svg-icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/68133/menu.svg"></md-icon>
+            </md-button>
+            <md-menu-content width="4">
+                <md-menu-item ng-repeat="item in items">
+                    <md-button ng-click="item.func($event)"> <span md-menu-align-target>{{item.name}}  {{$index+1}}</span></md-button>
+                    <!--<md-button ng-click="!angular.isUndefined(item.func)?item.func($event):''"> <span md-menu-align-target>{{item.name}}  {{$index+1}}</span></md-button>-->
+                </md-menu-item>
+            </md-menu-content>
+        </md-menu>
+        <div class="md-toolbar-tools">
+            <h1>{{pageTitle}}</h1>
+        </div>
+    </md-toolbar>
+
+
+    <div layout="column" class="md-padding md-whiteframe-z2" layout-fill >
+        <h1 ng-scope>{{pageTitle}}</h1>
+        <md-subheader class="md-no-sticky">Список сайтов</md-subheader>
+        <md-list-item ng-repeat="site in sites">
+            <img alt="{{ site.name }}" ng-src="http://lorempixel.com/64/64/technics/" class="md-avatar" />
+            <p class="md-list-item-text">{{ site.name }} <md-icon md-svg-icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/68133/menu.svg" aria-label="Open Chat" class="md-primary md-hue-3" ></md-icon></p>
+
+            <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Удалить сайт" ng-click="deleteSite(site.id)" class="md-hue-5" ></md-icon>
+        </md-list-item>
+
+
+    </div>
+
+
+    <div  flex>
+        <md-grid-list md-cols-sm="1" md-cols-md="2" md-cols-gt-md="6" md-row-height-gt-md="1:1" md-row-height="4:3" md-gutter="8px" md-gutter-gt-sm="4px" >
+            <md-grid-tile ng-repeat="site in sites" md-rowspan="3" md-colspan="2" md-colspan-sm="1">
+                <md-icon md-svg-icon="data:image/svg+xml;charset=utf-8,<svg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width%3D'64'%20height%3D'64'><rect%20width%3D'100%25'%20height%3D'100%25'%20fill%3D'crimson'%2F><line%20x1%3D'0'%20x2%3D'64'%20y1%3D'0'%20y2%3D'64'%20stroke%3D'gainsboro'%2F>%20<line%20x1%3D'64'%20x2%3D'0'%20y1%3D'0'%20y2%3D'64'%20stroke%3D'gainsboro'%2F><text%20x%3D'32'%20y%3D'36'%20font-size%3D'16'%20font%3D'Verdana%2C%20sans-serif'%20fill%3D'white'%20text-anchor%3D'middle'>64%20x%2064<%2Ftext><%2Fsvg>"></md-icon>
+                <md-grid-tile-footer><h3>{{site.name}}</h3></md-grid-tile-footer>
+            </md-grid-tile>
+        </md-grid-list>
+    </div>
