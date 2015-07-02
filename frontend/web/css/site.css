@@ -20,6 +20,10 @@ html,
 body {
     height: 100%;
 }
+.fix-top {
+    position: fixed;
+    top:0;
+}
 
 .wrap {
     min-height: 100%;
@@ -172,3 +176,7 @@ md-toolbar.snow-toolbar{
  /*contact ---------------------- */
 .page-contact.ng-leave      { transform-origin: 50% 50%; animation: rotateOutNewspaper .5s both ease-in; }
 .page-contact.ng-enter      { animation:slideInUp 0.5s both ease-in; }
+
+
+
+

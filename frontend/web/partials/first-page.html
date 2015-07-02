@@ -1,76 +1,91 @@
 <div layout="row">
-    <md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2 md-closed ng-isolate-scope md-locked-open" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')" tabindex="-1">
+    <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" tabindex="-1">
         Левый сайд бар
     </md-sidenav>
     <div layout="column" tabindex="-1" role="main" flex>
-        <md-toolbar class="md-whiteframe-z2 site-content-toolbar md-default-theme">
+        <md-toolbar  md-is-locked-open="$mdMedia('gt-sm')"  ng-click="toggleRight()"  class="fix-top md-whiteframe-z2 site-content-toolbar">
             Верхняя панель
         </md-toolbar>
-        <md-content md-scroll-y flex layout-padding class="ng-scope md-dafeult-theme">
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-              Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
-            Контентная часть<br>
+        <md-content >
+             <div layout="row" flex>
+                 <md-grid-list flex
+                     md-cols-sm="1" md-cols-md="2" md-cols-gt-md="6"
+                     md-row-height-gt-md="1:1" md-row-height="4:3"
+                     md-gutter="8px" md-gutter-gt-sm="4px" >
+                     <md-grid-tile ng-repeat="product in products"
+                         md-rowspan="{{product.span.row}}"
+                         md-colspan="{{product.span.col}}"
+                         md-colspan-sm="1"
+                         ng-class="product.background" >
+                         <md-card flex flex-order="{{$index}}">
+                             <img ng-src="{{product.img}}" class="md-card-image" alt="Washed Out">
+                             <md-card-content>
+                                 <h2 class="md-title">{{product.title}}</h2>
+                                 <p>
+                                     {{product.description}}
+                                 </p>
+                             </md-card-content>
+                             <div class="md-actions" layout="row" layout-align="end center">
+                                 <md-button class="md-primary"><ng-md-icon icon="insert_comment" size="28"></ng-md-icon></md-button>
+                                 <md-button class="md-primary"><ng-md-icon icon="shopping_cart" size="28"></ng-md-icon></md-button>
+                             </div>
+                         </md-card>
+                         <md-grid-tile-footer><h3>{{product.title}}</h3>
 
+                         </md-grid-tile-footer>
+                     </md-grid-tile>
+                 </md-grid-list>
+
+               <!-- <div flex="33" flex-order="3">
+                    <md-card>
+                        <img ng-src="http://placehold.it/150x150" class="md-card-image" alt="Washed Out">
+                        <md-card-content>
+                            <h2 class="md-title">Paracosm</h2>
+                            <p>
+                                The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+                                two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+                            </p>
+                        </md-card-content>
+                        <div class="md-actions" layout="row" layout-align="end center">
+
+                            <md-button class="md-primary"><ng-md-icon icon="insert_comment" size="28"></ng-md-icon></md-button>
+                            <md-button class="md-primary"><ng-md-icon icon="shopping_cart" size="28"></ng-md-icon></md-button>
+                        </div>
+                    </md-card>
+                </div>
+                <div class="md-medium-tall" flex="33" flex-order="2">
+                    <md-card>
+                        <img ng-src="http://placehold.it/150x150" class="md-card-image" alt="Washed Out">
+                        <md-card-content>
+                            <h2 class="md-title">Paracosm</h2>
+                            <p>
+                                The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+                                two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+                            </p>
+                        </md-card-content>
+                        <div class="md-actions" layout="row" layout-align="end center">
+                            <md-button class="md-primary"><ng-md-icon icon="insert_comment" size="28"></ng-md-icon></md-button>
+                            <md-button class="md-primary"><ng-md-icon icon="shopping_cart" size="28"></ng-md-icon></md-button>
+                        </div>
+                    </md-card>
+                </div>
+                <div flex="33" flex-order="1">
+                    <md-card>
+                        <img ng-src="http://placehold.it/150x150" class="md-card-image" alt="Washed Out">
+                        <md-card-content>
+                            <h2 class="md-title">Paracosm111</h2>
+                            <p>
+                                The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+                                two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+                            </p>
+                        </md-card-content>
+                        <div class="md-actions md-hue-1" layout="row" layout-align="end center">
+                           <md-button class="md-primary" aria-label="Back"><ng-md-icon icon="insert_comment" size="28"></ng-md-icon></md-button>
+                           <md-button class="md-primary"><ng-md-icon  icon="shopping_cart" size="28"></ng-md-icon></md-button>
+                        </div>
+                    </md-card>
+                </div>-->
+            </div>
 
         </md-content>
     </div>

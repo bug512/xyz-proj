@@ -22,6 +22,7 @@
         "bower-asset/angular-route": "*",
         "bower-asset/angular-strap": "*",
         "bower-asset/angular-material": "*",
+        "bower-asset/angular-material-icons": "*",
         "bower-asset/pace": "*"
     },
     "require-dev": {

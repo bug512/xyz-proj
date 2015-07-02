@@ -31,8 +31,8 @@
     </md-list-item>
 
 
-    <div layout="row">
-        <div flex flex-order="3">
+    <div layout="row" flex>
+        <div flex="33" flex-order="3">
             <md-card>
                 <img ng-src="http://placehold.it/150x150" class="md-card-image" alt="Washed Out">
                 <md-card-content>
@@ -43,12 +43,12 @@
                     </p>
                 </md-card-content>
                 <div class="md-actions" layout="row" layout-align="end center">
-                    <md-raised class="md-raised" ng-transclude>Action 1</md-raised>
+                    <md-raised class="md-raised">Action 1</md-raised>
                     <md-button>Action 2</md-button>
                 </div>
             </md-card>
         </div>
-        <div flex flex-order="2">
+        <div class="md-medium-tall" flex="33" flex-order="2">
             <md-card>
                 <img ng-src="http://placehold.it/150x150" class="md-card-image" alt="Washed Out">
                 <md-card-content>
@@ -64,7 +64,7 @@
                 </div>
             </md-card>
         </div>
-        <div flex flex-order="1">
+        <div flex="33" flex-order="1">
             <md-card>
                 <img ng-src="http://placehold.it/150x150" class="md-card-image" alt="Washed Out">
                 <md-card-content>
