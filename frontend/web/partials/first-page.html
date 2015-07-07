@@ -2,13 +2,79 @@
     <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" tabindex="-1">
         Левый сайд бар
     </md-sidenav>
-    <div layout="column" tabindex="-1" role="main" flex>
-        <md-toolbar  md-is-locked-open="$mdMedia('gt-sm')"  ng-click="toggleRight()"  class="fix-top md-whiteframe-z2 site-content-toolbar">
+    <div layout="column" tabindex="-1" role="main" >
+        <md-toolbar  ng-click="toggleRight()"  class="fix-top md-whiteframe-z2 site-content-toolbar">
             Верхняя панель
         </md-toolbar>
         <md-content >
-             <div layout="row" flex>
-                 <md-grid-list flex
+             <div layout="row" >
+
+                 <md-grid-list
+                     md-cols-sm="1" md-cols-md="2" md-cols-gt-md="6"
+                     md-row-height-gt-md="1:1" md-row-height="4:3"
+                     md-gutter="8px" md-gutter-gt-sm="4px" >
+                     <md-grid-tile class="red"
+                         md-rowspan="2" md-colspan="2">
+                         <md-grid-tile-footer>
+                             <h3>Svg-1</h3>
+                         </md-grid-tile-footer>
+                     </md-grid-tile>
+                     <md-grid-tile class="green">
+                         <md-grid-tile-footer>
+                             <h3>Svg-2</h3>
+                         </md-grid-tile-footer>
+                     </md-grid-tile>
+                     <md-grid-tile class="darkBlue">
+                         <md-grid-tile-footer>
+                             <h3>Svg-3</h3>
+                         </md-grid-tile-footer>
+                     </md-grid-tile>
+                     <md-grid-tile class="blue"
+                         md-colspan="2">
+                         <md-grid-tile-footer>
+                             <h3>Svg-4</h3>
+                         </md-grid-tile-footer>
+                     </md-grid-tile>
+                     <md-grid-tile class="yellow"
+                         md-rowspan="2" md-colspan="2">
+                         <md-grid-tile-footer>
+                             <h3>Svg-5</h3>
+                         </md-grid-tile-footer>
+                     </md-grid-tile>
+                     <md-grid-tile class="pink">
+                         <md-grid-tile-footer>
+                             <h3>Svg-6</h3>
+                         </md-grid-tile-footer>
+                     </md-grid-tile>
+                     <md-grid-tile class="darkBlue">
+                         <md-grid-tile-footer>
+                             <h3>Svg-7</h3>
+                         </md-grid-tile-footer>
+                     </md-grid-tile>
+                     <md-grid-tile class="purple">
+                         <md-grid-tile-footer>
+                             <h3>Svg-8</h3>
+                         </md-grid-tile-footer>
+                     </md-grid-tile>
+                     <md-grid-tile class="deepBlue">
+                         <md-grid-tile-footer>
+                             <h3>Svg-9</h3>
+                         </md-grid-tile-footer>
+                     </md-grid-tile>
+                     <md-grid-tile class="lightPurple">
+                         <md-grid-tile-footer>
+                             <h3>Svg-10</h3>
+                         </md-grid-tile-footer>
+                     </md-grid-tile>
+                     <md-grid-tile class="yellow">
+                         <md-grid-tile-footer>
+                             <h3>Svg-11</h3>
+                         </md-grid-tile-footer>
+                     </md-grid-tile>
+                 </md-grid-list>
+
+
+                 <!--<md-grid-list
                      md-cols-sm="1" md-cols-md="2" md-cols-gt-md="6"
                      md-row-height-gt-md="1:1" md-row-height="4:3"
                      md-gutter="8px" md-gutter-gt-sm="4px" >
@@ -34,7 +100,7 @@
 
                          </md-grid-tile-footer>
                      </md-grid-tile>
-                 </md-grid-list>
+                 </md-grid-list>-->
 
                <!-- <div flex="33" flex-order="3">
                     <md-card>

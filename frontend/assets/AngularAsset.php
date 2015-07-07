@@ -22,7 +22,6 @@ class AngularAsset extends AssetBundle
     ];
 
     public $js = [
-
         'angular/angular.min.js',
         'angular-route/angular-route.min.js',
         'angular-strap/dist/angular-strap.min.js',
@@ -32,6 +31,6 @@ class AngularAsset extends AssetBundle
         'angular-material-icons/angular-material-icons.min.js',
     ];
     public $jsOptions = [
-        'position' => View::POS_HEAD,
+        'position' => View::POS_END,
     ];
 }

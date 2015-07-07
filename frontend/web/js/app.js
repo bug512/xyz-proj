@@ -37,7 +37,7 @@ app.factory('ServerData', function(WebService) {
 });
 
 app.controller('indexCtrl', [
-	'$scope', '$log', 'ServerData', '$mdSidenav', '$mdDialog', '$mdToast', function($scope, $log, ServerData, $mdSidenav, $mdDialog, $mdToast) {
+	'$scope', '$log', 'ServerData', '$mdSidenav', '$mdDialog', '$mdToast','$mdGridLayout', function($scope, $log, ServerData, $mdSidenav,$mdGridLayout, $mdDialog, $mdToast) {
 		$scope.products = [
 			{
 				title:'Product Name',
@@ -90,7 +90,13 @@ app.controller('indexCtrl', [
 				background:'#0f000f'
 			}
 		];
-
+		console.log($mdGridLayout);
+		$mdGridLayout.animateWith(function gsapAnimator(grid, tiles) {
+			grid.element.css(grid.style);
+			tiles.forEach(function(t) {
+				t.element.css(t.style);
+			});
+		});
 		console.log($scope.products);
 		$scope.toggleRight = function(){
 			$mdSidenav('left').toggle();
